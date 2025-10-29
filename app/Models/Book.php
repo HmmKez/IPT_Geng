@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class books extends Model
+class Book extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'email',
-        'year_level',
+        'title',
+        'author',
+        'genre',
     ];
     public function borrowRecords()
     {
@@ -20,7 +20,7 @@ class books extends Model
     }
     public function members()
     {
-        return $this->belongsToMany(Member::class, 'borrow_records');
+        return $this->belongsToMany(Member::class);
     }
     
 }

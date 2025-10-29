@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('member_id')->constrained();
             $table->date('borrow_date');
             $table->date('return_date')->nullable();
+            $table->timestamps();
+
         });
     }
 
